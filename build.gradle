@@ -20,6 +20,10 @@ ext {
     javaCfEnvVersion = '3.1.2'
 }
 
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
     // Spring Boot
     implementation "org.springframework.boot:spring-boot-starter-web"
@@ -54,8 +58,12 @@ dependencies {
     // compile files('libs/ojdbc7.jar')
 
     // Testing
-    testImplementation "junit:junit"
-    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+    testImplementation 'org.springframework.boot:spring-boot-docker-compose'
+    testImplementation 'org.testcontainers:junit-jupiter'
+    testImplementation 'org.testcontainers:mysql'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.31.0'
 }
 
 java {
